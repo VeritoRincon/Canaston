@@ -26,6 +26,7 @@ html,body{background:var(--cream);font-family:'DM Sans',sans-serif;color:var(--b
 .field-label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--wine);font-weight:500;margin-bottom:6px;display:block}
 .field-input{width:100%;border:1px solid var(--gray-border);border-radius:8px;padding:11px 14px;font-size:15px;background:var(--white);font-family:'DM Sans',sans-serif;color:var(--black);outline:none;transition:border-color 0.2s}
 .field-input:focus{border-color:var(--wine)}
+.field-input.error{border-color:var(--neg)}
 .time-row{display:flex;align-items:center;gap:8px}
 .time-row .field-input{text-align:center;width:70px}
 .time-sep{font-size:20px;color:var(--gray);font-weight:300}
@@ -35,8 +36,12 @@ html,body{background:var(--cream);font-family:'DM Sans',sans-serif;color:var(--b
 .p-field{flex:1}
 .p-hint{font-size:11px;color:var(--gray);margin-top:4px;line-height:1.4}
 .pin-hint{font-size:11px;color:var(--gray);margin-top:5px}
-.btn-primary{width:100%;background:var(--wine);color:#f3f3f3;border:none;border-radius:10px;padding:15px;font-size:16px;font-family:'Playfair Display',serif;font-weight:500;cursor:pointer;letter-spacing:0.5px;margin-top:0.5rem;transition:opacity 0.2s}
+.section-divider{height:1px;background:var(--gray-light);margin:1.5rem 0}
+.section-tag{font-family:'Playfair Display',serif;font-size:15px;color:var(--black);margin-bottom:1rem}
+.legal-text{font-size:11px;color:var(--gray);line-height:1.6;margin-top:0.75rem;padding:0.75rem;background:#f9f9f9;border-radius:6px;border:0.5px solid var(--gray-border)}
+.btn-primary{width:100%;background:var(--wine);color:#f3f3f3;border:none;border-radius:10px;padding:15px;font-size:16px;font-family:'Playfair Display',serif;font-weight:500;cursor:pointer;letter-spacing:0.5px;margin-top:0.75rem;transition:opacity 0.2s}
 .btn-primary:active{opacity:0.85}
+.btn-primary:disabled{opacity:0.5;cursor:not-allowed}
 .divider{height:1px;background:var(--gray-light);margin:1.25rem 0}
 .sec-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:500;color:var(--black);margin-bottom:0.75rem;padding-bottom:0.5rem;border-bottom:1px solid var(--gray-light)}
 .game-header{background:var(--wine);color:#f3f3f3;padding:1rem 1.25rem 0}
@@ -205,6 +210,26 @@ details summary::-webkit-details-marker{display:none}
     <p>Nueva mesa</p>
   </div>
   <div class="setup-body">
+
+    <!-- DATOS PERSONALES -->
+    <p class="section-tag serif">Tus datos</p>
+    <div class="field-group">
+      <label class="field-label">Nombre completo *</label>
+      <input class="field-input" type="text" id="inp-nombre" placeholder="Tu nombre" maxlength="60" autocomplete="name">
+    </div>
+    <div class="field-group">
+      <label class="field-label">Correo electrónico *</label>
+      <input class="field-input" type="email" id="inp-correo" placeholder="tucorreo@email.com" maxlength="80" autocomplete="email" inputmode="email">
+    </div>
+    <div class="field-group">
+      <label class="field-label">Teléfono / WhatsApp *</label>
+      <input class="field-input" type="tel" id="inp-tel" placeholder="Ej: 3001234567" maxlength="20" autocomplete="tel" inputmode="tel">
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- DATOS DE LA MESA -->
+    <p class="section-tag serif">Tu mesa</p>
     <div class="field-group">
       <label class="field-label">Nombre del torneo / mesa</label>
       <input class="field-input" type="text" id="inp-torneo" placeholder="Ej: Mesa de las Primas" maxlength="40">
@@ -254,7 +279,13 @@ details summary::-webkit-details-marker{display:none}
       <input class="field-input" type="password" id="inp-pin" placeholder="••••" maxlength="4" inputmode="numeric">
       <p class="pin-hint">4 dígitos. Solo quien tenga el PIN puede anotar puntajes.</p>
     </div>
-    <button class="btn-primary" onclick="crearMesa()">Comenzar torneo</button>
+
+    <button class="btn-primary" id="btn-comenzar" onclick="crearMesa()">Comenzar torneo</button>
+
+    <p class="legal-text">
+      Guardamos tus datos con cariño. Solo los usaremos para avisarte de novedades de Canaston. ¡Prometido como buena paca! 🃏 Gracias por confiar en nosotros.
+    </p>
+
   </div>
 </div>
 
@@ -424,12 +455,13 @@ const firebaseConfig = {
   databaseURL: "https://canaston-b4cbe-default-rtdb.firebaseio.com"
 };
 
+const SHEETS_URL = "https://script.google.com/macros/s/AKfycbwi7S1ZwVXeXtrKV1UOceWJoCKRkU9DBZN2WTGEpilv-2egRND2HlGlsd4wz7nQfyRTlQ/exec";
+const CLAVE = "canaston2024seguro";
+
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-// Orden continuo de picada: J1(0) → J3(2) → J2(1) → J4(3) → J1(0) ...
 const PICA_ORDER = [0,2,1,3];
-
 const ALL_COMBOS = [
   {parejas:[[0,1],[2,3]]},
   {parejas:[[0,2],[1,3]]},
@@ -437,7 +469,7 @@ const ALL_COMBOS = [
 ];
 
 function puntosParaBajada(acum){
-  if(acum<=0)   return 50;
+  if(acum<=0)    return 50;
   if(acum<=3000)  return 50;
   if(acum<=5000)  return 90;
   if(acum<=7000)  return 120;
@@ -453,8 +485,7 @@ let S = {
   pataNum:1, picaIdx:0, parejas:[[0,1],[2,3]],
   manos:[],
   posScores:[[null,null,null],[null,null,null],[null,null,null],[null,null,null]],
-  usedCombos:[0],
-  totalManosJugadas:0,
+  usedCombos:[0], totalManosJugadas:0,
   newPicaIdx:0, newParejas:[[0,1],[2,3]], newComboIdx:0
 };
 
@@ -463,24 +494,19 @@ function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t
 function fmt(n){if(n===null||n===undefined)return '—';return Math.round(n).toLocaleString('es-CO')}
 function genId(){return Math.random().toString(36).substr(2,8).toUpperCase()}
 function hashPin(p){let h=0;for(let i=0;i<p.length;i++){h=((h<<5)-h)+p.charCodeAt(i);h|=0}return h.toString()}
-
-function valorFirmado(base,esNeg){
-  const v=Math.abs(Number(base)||0);
-  return esNeg?-v:v;
-}
-
+function valorFirmado(base,esNeg){const v=Math.abs(Number(base)||0);return esNeg?-v:v;}
 function calcAcums(manos){
   let acumA=0,acumB=0;
   return manos.map(m=>{
-    const bA=valorFirmado(m.baseA,m.negA), cA=valorFirmado(m.contA,m.negContA);
-    const bB=valorFirmado(m.baseB,m.negB), cB=valorFirmado(m.contB,m.negContB);
-    const totA=bA+cA, totB=bB+cB;
-    acumA+=totA; acumB+=totB;
+    const bA=valorFirmado(m.baseA,m.negA),cA=valorFirmado(m.contA,m.negContA);
+    const bB=valorFirmado(m.baseB,m.negB),cB=valorFirmado(m.contB,m.negContB);
+    const totA=bA+cA,totB=bB+cB;
+    acumA+=totA;acumB+=totB;
     return {bA,cA,bB,cB,totA,totB,acumA,acumB};
   });
 }
-
-function picaEnManoN(n){ return PICA_ORDER[n%4]; }
+function picaEnManoN(n){return PICA_ORDER[n%4];}
+function validarEmail(e){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);}
 
 // INIT
 document.getElementById('loading').style.display='flex';
@@ -494,18 +520,46 @@ if(mesaParam){
   show('screen-setup');
 }
 
-window.crearMesa=async function(){
-  const torneo=document.getElementById('inp-torneo').value.trim();
-  const p1=document.getElementById('p1').value.trim();
-  const p2=document.getElementById('p2').value.trim();
-  const p3=document.getElementById('p3').value.trim();
-  const p4=document.getElementById('p4').value.trim();
-  const pin=document.getElementById('inp-pin').value.trim();
-  const min=parseInt(document.getElementById('inp-min').value)||1;
-  const sec=parseInt(document.getElementById('inp-sec').value)||10;
-  if(!torneo||!p1||!p2||!p3||!p4){toast('Completa todos los campos');return}
+// REGISTRO EN SHEETS
+async function registrarEnSheets(nombre, correo, telefono, torneo){
+  try{
+    await fetch(SHEETS_URL, {
+      method:'POST',
+      mode:'no-cors',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({clave:CLAVE, nombre, correo, telefono, torneo})
+    });
+  } catch(e){
+    console.log('No se pudo guardar registro:', e);
+  }
+}
+
+// CREAR MESA
+window.crearMesa = async function(){
+  const nombre = document.getElementById('inp-nombre').value.trim();
+  const correo = document.getElementById('inp-correo').value.trim();
+  const tel    = document.getElementById('inp-tel').value.trim();
+  const torneo = document.getElementById('inp-torneo').value.trim();
+  const p1 = document.getElementById('p1').value.trim();
+  const p2 = document.getElementById('p2').value.trim();
+  const p3 = document.getElementById('p3').value.trim();
+  const p4 = document.getElementById('p4').value.trim();
+  const pin = document.getElementById('inp-pin').value.trim();
+  const min = parseInt(document.getElementById('inp-min').value)||1;
+  const sec = parseInt(document.getElementById('inp-sec').value)||10;
+
+  // Validaciones
+  if(!nombre){toast('Ingresa tu nombre');document.getElementById('inp-nombre').focus();return}
+  if(!correo||!validarEmail(correo)){toast('Ingresa un correo válido');document.getElementById('inp-correo').focus();return}
+  if(!tel||tel.length<7){toast('Ingresa tu teléfono');document.getElementById('inp-tel').focus();return}
+  if(!torneo||!p1||!p2||!p3||!p4){toast('Completa todos los campos de la mesa');return}
   if(pin.length!==4||isNaN(pin)){toast('El PIN debe ser 4 dígitos numéricos');return}
-  const id=genId();
+
+  const btn = document.getElementById('btn-comenzar');
+  btn.disabled = true;
+  btn.textContent = 'Creando mesa...';
+
+  const id = genId();
   S.mesaId=id; S.isOwner=true; S.pinVerificado=true;
   S.players=[p1,p2,p3,p4]; S.torneo=torneo;
   S.timerTotal=min*60+sec; S.timerLeft=S.timerTotal;
@@ -513,7 +567,9 @@ window.crearMesa=async function(){
   S.manos=[]; S.totalManosJugadas=0;
   S.posScores=[[null,null,null],[null,null,null],[null,null,null],[null,null,null]];
   S.usedCombos=[0];
+
   try{
+    // Guardar en Firebase
     await set(ref(db,`mesas/${id}`),{
       torneo,players:[p1,p2,p3,p4],timerTotal:S.timerTotal,
       pinHash:hashPin(pin),pataNum:1,picaIdx:0,
@@ -521,11 +577,17 @@ window.crearMesa=async function(){
       posScores:[[null,null,null],[null,null,null],[null,null,null],[null,null,null]],
       usedCombos:[0],totalManosJugadas:0,updatedAt:Date.now()
     });
+    // Registrar en Google Sheets (no bloqueante)
+    registrarEnSheets(nombre, correo, tel, torneo);
     document.getElementById('share-link').textContent=location.origin+location.pathname+'?mesa='+id;
-    document.getElementById('loading').style.display='none';
     show('screen-game');
     renderJuego();
-  } catch(e){toast('Error al crear la mesa.');console.error(e);}
+  } catch(e){
+    toast('Error al crear la mesa. Verifica tu conexión.');
+    btn.disabled=false;
+    btn.textContent='Comenzar torneo';
+    console.error(e);
+  }
 }
 
 async function guardar(){
@@ -580,7 +642,6 @@ window.timerReset=function(){
   document.getElementById('t-play').innerHTML='&#9654;';
 }
 
-// top=J1(0), right=J3(2), bottom=J2(1), left=J4(3)
 function renderMesa(topId,rightId,bottomId,leftId,chipsId){
   const seatMap={[topId]:0,[rightId]:2,[bottomId]:1,[leftId]:3};
   Object.entries(seatMap).forEach(([elId,pi])=>{
@@ -627,15 +688,11 @@ function renderPataTable(){
   const pa=S.parejas[0].map(i=>S.players[i]).join(' & ');
   const pb=S.parejas[1].map(i=>S.players[i]).join(' & ');
   const acums=calcAcums(S.manos);
-
-  // Quien pica en la proxima mano (aun no jugada)
   const nextPicaNombre=S.players[picaEnManoN(S.totalManosJugadas)];
-
   let rows='';
   S.manos.forEach((m,i)=>{
     const a=acums[i];
-    // Mano global de esta mano = totalManosJugadas - manos.length + i
-    const manoGlobal=S.totalManosJugadas - S.manos.length + i;
+    const manoGlobal=S.totalManosJugadas-S.manos.length+i;
     const picaNombreMano=S.players[picaEnManoN(manoGlobal)];
     rows+=`
     <tr style="background:#fff8f8">
@@ -671,10 +728,8 @@ function renderPataTable(){
       <td colspan="2">${fmt(a.acumB)}</td>
     </tr>`;
   });
-
   const lastAcum=acums.length?acums[acums.length-1]:{acumA:0,acumB:0};
   const canClose=lastAcum.acumA>=15000||lastAcum.acumB>=15000;
-
   document.getElementById('pata-container').innerHTML=`
     <p class="sec-title serif">Pata ${S.pataNum}</p>
     <div style="font-size:12px;color:var(--gray);margin-bottom:0.5rem;padding:6px 10px;background:#fafafa;border-radius:6px;border:0.5px solid var(--gray-border)">
@@ -703,18 +758,10 @@ function renderPataTable(){
     <button class="btn-cerrar ${canClose?'ready':''}" onclick="intentarCerrarPata()">&#9873; Cerrar pata ${S.pataNum}</button>`;
 }
 
-window.toggleNeg=function(i,field){
-  S.manos[i][field]=!S.manos[i][field];
-  renderPataTable();renderBajada();guardar();
-}
-
-window.updateMano=function(i,field,val){
-  S.manos[i][field]=Math.abs(parseInt(val)||0);
-  renderPataTable();renderBajada();guardar();
-}
+window.toggleNeg=function(i,field){S.manos[i][field]=!S.manos[i][field];renderPataTable();renderBajada();guardar();}
+window.updateMano=function(i,field,val){S.manos[i][field]=Math.abs(parseInt(val)||0);renderPataTable();renderBajada();guardar();}
 
 window.addMano=function(){
-  // El picaIdx para esta nueva mano es el que corresponde al contador actual
   S.picaIdx=picaEnManoN(S.totalManosJugadas);
   S.manos.push({baseA:0,negA:false,contA:0,negContA:false,baseB:0,negB:false,contB:0,negContB:false});
   S.totalManosJugadas++;
@@ -766,10 +813,9 @@ function abrirModalPata(acumA,acumB){
       <div class="rp rp-r"><p class="rp-lbl">&#9830; ${pa}</p><p class="rp-val rp-val-r">${fmt(acumA)}</p></div>
       <div class="rp rp-b"><p class="rp-lbl">&#9824; ${pb}</p><p class="rp-val">${fmt(acumB)}</p></div>
     </div>`;
-  // Sugerencia: quien pica segun contador continuo
   S.newPicaIdx=picaEnManoN(S.totalManosJugadas);
   const combosDisp=ALL_COMBOS.map((c,i)=>({...c,idx:i})).filter(c=>!S.usedCombos.includes(c.idx));
-  if(combosDisp.length===0){S.newParejas=[[0,1],[2,3]];S.newComboIdx=-1;}
+  if(!combosDisp.length){S.newParejas=[[0,1],[2,3]];S.newComboIdx=-1;}
   else{S.newComboIdx=combosDisp[0].idx;S.newParejas=combosDisp[0].parejas.map(p=>[...p]);}
   document.getElementById('modal-pata').classList.add('open');
   modalIr(1);
@@ -822,8 +868,7 @@ window.swapParejas=function(){
   if(disp.length<=1)return;
   const cur=disp.findIndex(c=>c.idx===S.newComboIdx);
   const next=disp[(cur+1)%disp.length];
-  S.newComboIdx=next.idx;
-  S.newParejas=next.parejas.map(p=>[...p]);
+  S.newComboIdx=next.idx;S.newParejas=next.parejas.map(p=>[...p]);
   renderParejaStep();
 }
 
@@ -831,8 +876,7 @@ async function iniciarSiguientePata(){
   S.picaIdx=S.newPicaIdx;
   S.parejas=S.newParejas.map(p=>[...p]);
   S.usedCombos.push(S.newComboIdx);
-  S.pataNum++;
-  S.manos=[];
+  S.pataNum++;S.manos=[];
   clearInterval(S.timerInterval);S.timerRunning=false;S.timerLeft=S.timerTotal;
   document.getElementById('t-play').innerHTML='&#9654;';
   document.getElementById('modal-pata').classList.remove('open');
@@ -869,9 +913,9 @@ async function iniciarVistaEspectadora(){
     show('screen-viewer');
     onValue(ref(db,`mesas/${S.mesaId}`),(snapshot)=>{
       const data=snapshot.val();if(!data)return;
-      S.torneo=data.torneo; S.players=data.players;
+      S.torneo=data.torneo;S.players=data.players;
       S.timerTotal=data.timerTotal||70;
-      S.pataNum=data.pataNum||1; S.picaIdx=data.picaIdx||0;
+      S.pataNum=data.pataNum||1;S.picaIdx=data.picaIdx||0;
       S.parejas=data.parejas||[[0,1],[2,3]];
       S.manos=data.manos||[];
       S.posScores=data.posScores||[[null,null,null],[null,null,null],[null,null,null],[null,null,null]];
