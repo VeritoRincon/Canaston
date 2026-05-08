@@ -534,8 +534,8 @@ const firebaseConfig = {
   databaseURL: "https://canaston-b4cbe-default-rtdb.firebaseio.com"
 };
 
-const SHEETS_URL = "https://script.google.com/macros/s/AKfycbwi7S1ZwVXeXtrKV1UOceWJoCKRkU9DBZN2WTGEpilv-2egRND2HlGlsd4wz7nQfyRTlQ/exec";
-const CLAVE = "canaston2024seguro";
+const SHEETS_URL = "https://script.google.com/macros/s/AKfycbwi7S1ZwVXeXtrKV1UOceWJoCKRkU9DBZN2WTGEpilv-2egRND2HlGlsd4wz7nQfyRTlQ/exec"; = "https://script.google.com/macros/s/AKfycbwi7S1ZwVXeXtrKV1UOceWJoCKRkU9DBZN2WTGEpilv-2egRND2HlGlsd4wz7nQfyRTlQ/exec";
+const CLAVE = "Cn8$mP2xQw7vLr4Tz9kJ3nYs6bFhDq1X";
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
@@ -608,7 +608,7 @@ if(mesaParam){
 
 async function registrarEnSheets(nombre,correo,telefono,torneo){
   try{
-    await fetch(SHEETS_URL,{
+    await fetch(const SHEETS_URL = "https://script.google.com/macros/s/AKfycbwi7S1ZwVXeXtrKV1UOceWJoCKRkU9DBZN2WTGEpilv-2egRND2HlGlsd4wz7nQfyRTlQ/exec";,{
       method:'POST',mode:'no-cors',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({clave:CLAVE,nombre,correo,telefono,torneo})
