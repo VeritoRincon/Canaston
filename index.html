@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Canaston</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 :root{
@@ -18,6 +18,8 @@ html,body{background:var(--cream);font-family:'DM Sans',sans-serif;color:var(--b
 .serif{font-family:'Playfair Display',serif}
 .screen{display:none;max-width:480px;margin:0 auto}
 .screen.active{display:block}
+
+/* SETUP */
 .setup-header{background:var(--wine);padding:2rem 1.5rem 1.5rem;text-align:center;color:#f3f3f3}
 .setup-header h1{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;letter-spacing:0.5px}
 .setup-header p{font-size:12px;opacity:0.7;margin-top:4px;text-transform:uppercase;letter-spacing:2px}
@@ -26,7 +28,6 @@ html,body{background:var(--cream);font-family:'DM Sans',sans-serif;color:var(--b
 .field-label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--wine);font-weight:500;margin-bottom:6px;display:block}
 .field-input{width:100%;border:1px solid var(--gray-border);border-radius:8px;padding:11px 14px;font-size:15px;background:var(--white);font-family:'DM Sans',sans-serif;color:var(--black);outline:none;transition:border-color 0.2s}
 .field-input:focus{border-color:var(--wine)}
-.field-input.error{border-color:var(--neg)}
 .time-row{display:flex;align-items:center;gap:8px}
 .time-row .field-input{text-align:center;width:70px}
 .time-sep{font-size:20px;color:var(--gray);font-weight:300}
@@ -44,6 +45,8 @@ html,body{background:var(--cream);font-family:'DM Sans',sans-serif;color:var(--b
 .btn-primary:disabled{opacity:0.5;cursor:not-allowed}
 .divider{height:1px;background:var(--gray-light);margin:1.25rem 0}
 .sec-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:500;color:var(--black);margin-bottom:0.75rem;padding-bottom:0.5rem;border-bottom:1px solid var(--gray-light)}
+
+/* GAME HEADER */
 .game-header{background:var(--wine);color:#f3f3f3;padding:1rem 1.25rem 0}
 .gh-title{font-family:'Playfair Display',serif;font-size:20px;text-align:center;letter-spacing:0.3px}
 .gh-pata{font-size:11px;text-transform:uppercase;letter-spacing:2px;opacity:0.7;text-align:center;margin-top:2px}
@@ -53,7 +56,11 @@ html,body{background:var(--cream);font-family:'DM Sans',sans-serif;color:var(--b
 .t-btn:active{background:rgba(255,255,255,0.25)}
 .t-bar{height:3px;background:rgba(255,255,255,0.2);overflow:hidden}
 .t-bar-fill{height:100%;background:#f3f3f3;transition:width 1s linear}
+
+/* GAME BODY */
 .game-body{padding:1rem 1.25rem;max-width:480px;margin:0 auto}
+
+/* MESA */
 .mesa-grid{display:grid;grid-template-columns:1fr 76px 1fr;grid-template-rows:auto 76px auto;gap:8px;align-items:center;justify-items:center;margin-bottom:0.875rem}
 .mesa-center{width:72px;height:72px;border:1.5px solid var(--black);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--wine)}
 .seat{text-align:center}
@@ -69,6 +76,8 @@ html,body{background:var(--cream);font-family:'DM Sans',sans-serif;color:var(--b
 .chip-names{font-size:13px;font-weight:500;margin-top:2px}
 .chip-names-r{color:var(--wine)}
 .chip-names-b{color:var(--black)}
+
+/* TABLA BAJADA */
 details summary{font-family:'Playfair Display',serif;font-size:15px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding-bottom:0.5rem;border-bottom:1px solid var(--gray-light)}
 details summary::-webkit-details-marker{display:none}
 .ref-tbl{width:100%;border-collapse:collapse;font-size:13px;margin-top:0.5rem}
@@ -76,6 +85,8 @@ details summary::-webkit-details-marker{display:none}
 .ref-tbl td{padding:6px 10px;border-bottom:0.5px solid var(--gray-light)}
 .ref-tbl tr:nth-child(even) td{background:rgba(0,0,0,0.015)}
 .pts-badge{background:var(--wine);color:#f3f3f3;border-radius:4px;padding:1px 7px;font-size:12px;font-weight:500}
+
+/* BAJADA SUGERIDA */
 .bajada-sugerida{border-radius:8px;border:1px solid var(--gray-border);overflow:hidden;margin-bottom:0.75rem}
 .bajada-row{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-bottom:0.5px solid var(--gray-light)}
 .bajada-row:last-child{border-bottom:none}
@@ -87,6 +98,8 @@ details summary::-webkit-details-marker{display:none}
 .bajada-acum{font-size:11px;color:var(--gray);margin-top:1px}
 .bajada-pts{background:var(--wine);color:#f3f3f3;border-radius:5px;padding:3px 10px;font-size:13px;font-weight:500;white-space:nowrap}
 .bajada-pts-b{background:var(--black)}
+
+/* TABLA PUNTAJES */
 .pata-wrap{overflow-x:auto;margin-bottom:0.75rem;border-radius:8px;border:1px solid var(--gray-light)}
 .pata-tbl{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed}
 .pata-tbl th{padding:7px 3px;text-align:center;font-size:10px;text-transform:uppercase;letter-spacing:0.5px;border-bottom:1.5px solid var(--gray-border);background:#fafafa}
@@ -110,6 +123,8 @@ details summary::-webkit-details-marker{display:none}
 .btn-mano:active{background:var(--wine-light)}
 .btn-cerrar{width:100%;background:var(--wine);color:#f3f3f3;border:none;border-radius:8px;padding:11px;font-size:14px;cursor:pointer;font-family:'Playfair Display',serif;opacity:0.35;transition:opacity 0.2s}
 .btn-cerrar.ready{opacity:1}
+
+/* POSICIONAMIENTO */
 .pos-tbl{width:100%;border-collapse:collapse;font-size:12px}
 .pos-tbl th{padding:7px 5px;text-align:center;font-size:10px;text-transform:uppercase;letter-spacing:0.5px;color:var(--gray);border-bottom:1px solid var(--gray-light)}
 .pos-tbl th:first-child{text-align:left}
@@ -117,6 +132,8 @@ details summary::-webkit-details-marker{display:none}
 .pos-tbl td:first-child{text-align:left;font-weight:500}
 .pos-hl{color:var(--wine);font-weight:500}
 .pos-badge{display:inline-block;background:var(--wine);color:#f3f3f3;font-size:9px;border-radius:3px;padding:1px 4px;margin-left:3px;vertical-align:middle}
+
+/* MODAL PATA */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:200;align-items:flex-end;justify-content:center}
 .modal-overlay.open{display:flex}
 .modal-sheet{background:var(--white);border-radius:18px 18px 0 0;padding:1.5rem 1.25rem 2rem;width:100%;max-width:480px;max-height:92vh;overflow-y:auto}
@@ -153,6 +170,8 @@ details summary::-webkit-details-marker{display:none}
 .swap-btn{background:none;border:1px solid var(--gray-border);border-radius:6px;padding:5px 14px;cursor:pointer;font-size:12px;color:var(--gray);font-family:'DM Sans',sans-serif}
 .btn-confirm{width:100%;background:var(--wine);color:#f3f3f3;border:none;border-radius:10px;padding:14px;font-size:15px;font-family:'Playfair Display',serif;cursor:pointer;margin-top:0.5rem;transition:opacity 0.2s}
 .btn-confirm:active{opacity:0.85}
+
+/* PIN MODAL */
 .pin-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:300;align-items:center;justify-content:center;padding:1.5rem}
 .pin-modal-overlay.open{display:flex}
 .pin-box{background:var(--white);border-radius:16px;padding:1.5rem;width:100%;max-width:320px;text-align:center}
@@ -164,6 +183,8 @@ details summary::-webkit-details-marker{display:none}
 .pin-btns{display:flex;gap:8px;margin-top:1rem}
 .btn-cancel{flex:1;background:none;border:1px solid var(--gray-border);border-radius:8px;padding:11px;font-size:14px;cursor:pointer;font-family:'DM Sans',sans-serif;color:var(--gray)}
 .btn-ok{flex:1;background:var(--wine);color:#f3f3f3;border:none;border-radius:8px;padding:11px;font-size:14px;cursor:pointer;font-family:'DM Sans',sans-serif}
+
+/* ESPECTADORA */
 .live-bar{display:flex;align-items:center;justify-content:center;gap:6px;padding:4px 0 8px}
 .live-dot{width:7px;height:7px;border-radius:50%;background:#7fff7f;animation:pulse 1.5s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
@@ -179,8 +200,41 @@ details summary::-webkit-details-marker{display:none}
 .sb-mano{font-size:10px;color:var(--gray);margin-top:2px}
 .updated-txt{font-size:10px;color:var(--gray);text-align:center;margin-top:0.5rem}
 .pata-badge{display:inline-block;background:var(--black);color:#f3f3f3;font-size:10px;text-transform:uppercase;letter-spacing:1px;border-radius:4px;padding:2px 8px;margin-bottom:0.75rem}
+
+/* PANTALLA FINAL */
+.final-body{padding:1.5rem 1.25rem;max-width:480px;margin:0 auto}
+.share-card{background:var(--cream);border:2px solid var(--wine);border-radius:12px;padding:1.5rem;position:relative;overflow:hidden;margin-bottom:1rem}
+.card-corner{position:absolute;font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--wine);line-height:1}
+.card-corner.tl{top:12px;left:14px;text-align:center}
+.card-corner.br{bottom:12px;right:14px;transform:rotate(180deg);text-align:center}
+.card-corner span{display:block;font-size:14px}
+.card-suit-bg{position:absolute;font-size:120px;color:rgba(139,26,26,0.04);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;line-height:1;user-select:none}
+.card-header{text-align:center;margin-bottom:1.25rem;padding:0 2.5rem}
+.card-tag{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--gray);margin-bottom:4px}
+.card-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--wine);line-height:1.2}
+.card-date{font-size:11px;color:var(--gray);margin-top:4px}
+.winner-block{background:var(--wine);border-radius:8px;padding:0.875rem 1rem;text-align:center;margin-bottom:1rem}
+.winner-tag{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:rgba(243,243,243,0.7);margin-bottom:4px}
+.winner-name{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#f3f3f3}
+.winner-score{font-size:14px;color:rgba(243,243,243,0.8);margin-top:2px}
+.scores-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
+.sc-card{background:var(--white);border:1px solid var(--gray-border);border-radius:8px;padding:8px 10px;text-align:center}
+.sc-name{font-size:12px;font-weight:500;color:var(--black);margin-bottom:2px}
+.sc-val{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--black)}
+.sc-val-top{color:var(--wine)}
+.sc-patas{font-size:10px;color:#999;margin-top:2px}
+.card-footer-note{text-align:center;border-top:0.5px solid var(--gray-border);padding-top:0.875rem;margin-top:0.25rem}
+.card-footer-note p{font-size:11px;color:var(--gray);font-family:'Playfair Display',serif;font-style:italic}
+.card-footer-note strong{color:var(--wine);font-style:normal}
+.foto-note{background:var(--wine-light);border:1px solid var(--wine-mid);border-radius:8px;padding:0.75rem 1rem;text-align:center;margin-bottom:0.75rem;font-size:13px;color:var(--wine);line-height:1.5}
+.btn-nueva{width:100%;background:var(--wine);color:#f3f3f3;border:none;border-radius:10px;padding:14px;font-size:16px;font-family:'Playfair Display',serif;cursor:pointer;letter-spacing:0.3px;transition:opacity 0.2s}
+.btn-nueva:active{opacity:0.85}
+
+/* TOAST */
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--black);color:#f3f3f3;border-radius:8px;padding:10px 20px;font-size:13px;z-index:999;transition:transform 0.3s;pointer-events:none;white-space:nowrap}
 .toast.show{transform:translateX(-50%) translateY(0)}
+
+/* LOADING / ERROR */
 .loading-screen{display:flex;align-items:center;justify-content:center;min-height:100vh;flex-direction:column;gap:12px}
 .loading-screen p{color:var(--gray);font-size:14px}
 .spinner{width:32px;height:32px;border:2px solid var(--gray-light);border-top-color:var(--wine);border-radius:50%;animation:spin 0.8s linear infinite}
@@ -210,8 +264,6 @@ details summary::-webkit-details-marker{display:none}
     <p>Nueva mesa</p>
   </div>
   <div class="setup-body">
-
-    <!-- DATOS PERSONALES -->
     <p class="section-tag serif">Tus datos</p>
     <div class="field-group">
       <label class="field-label">Nombre completo *</label>
@@ -225,10 +277,7 @@ details summary::-webkit-details-marker{display:none}
       <label class="field-label">Teléfono / WhatsApp *</label>
       <input class="field-input" type="tel" id="inp-tel" placeholder="Ej: 3001234567" maxlength="20" autocomplete="tel" inputmode="tel">
     </div>
-
     <div class="section-divider"></div>
-
-    <!-- DATOS DE LA MESA -->
     <p class="section-tag serif">Tu mesa</p>
     <div class="field-group">
       <label class="field-label">Nombre del torneo / mesa</label>
@@ -279,13 +328,8 @@ details summary::-webkit-details-marker{display:none}
       <input class="field-input" type="password" id="inp-pin" placeholder="••••" maxlength="4" inputmode="numeric">
       <p class="pin-hint">4 dígitos. Solo quien tenga el PIN puede anotar puntajes.</p>
     </div>
-
     <button class="btn-primary" id="btn-comenzar" onclick="crearMesa()">Comenzar torneo</button>
-
-    <p class="legal-text">
-      Guardamos tus datos con cariño. Solo los usaremos para avisarte de novedades de Canaston. ¡Prometido como buena paca! 🃏 Gracias por confiar en nosotros.
-    </p>
-
+    <p class="legal-text">Guardamos tus datos con cariño. Solo los usaremos para avisarte de novedades de Canaston. ¡Prometido como buena paca! 🃏 Gracias por confiar en nosotros.</p>
   </div>
 </div>
 
@@ -321,11 +365,11 @@ details summary::-webkit-details-marker{display:none}
         <thead><tr><th>Acumulado</th><th>Sale con</th></tr></thead>
         <tbody>
           <tr><td>0 – 3.000</td><td><span class="pts-badge">50 pts</span></td></tr>
-          <tr><td>3.001 – 5.000</td><td><span class="pts-badge">90 pts</span></td></tr>
-          <tr><td>5.001 – 7.000</td><td><span class="pts-badge">120 pts</span></td></tr>
-          <tr><td>7.001 – 10.000</td><td><span class="pts-badge">160 pts</span></td></tr>
-          <tr><td>10.001 – 12.000</td><td><span class="pts-badge">180 pts</span></td></tr>
-          <tr><td>12.001 – 15.000</td><td><span class="pts-badge">200 pts</span></td></tr>
+          <tr><td>3.005 – 5.000</td><td><span class="pts-badge">90 pts</span></td></tr>
+          <tr><td>5.005 – 7.000</td><td><span class="pts-badge">120 pts</span></td></tr>
+          <tr><td>7.005 – 10.000</td><td><span class="pts-badge">160 pts</span></td></tr>
+          <tr><td>10.005 – 12.000</td><td><span class="pts-badge">180 pts</span></td></tr>
+          <tr><td>12.005 – 15.000</td><td><span class="pts-badge">200 pts</span></td></tr>
         </tbody>
       </table>
     </details>
@@ -396,6 +440,41 @@ details summary::-webkit-details-marker{display:none}
   </div>
 </div>
 
+<!-- PANTALLA FINAL -->
+<div class="screen" id="screen-final">
+  <div class="game-header">
+    <p class="gh-title serif" id="f-title"></p>
+    <p class="gh-pata" style="font-size:11px;text-transform:uppercase;letter-spacing:2px;opacity:0.7;text-align:center;margin-top:2px">Partida finalizada</p>
+  </div>
+  <div style="height:3px;background:var(--wine)"></div>
+  <div class="final-body">
+    <div class="share-card" id="share-card">
+      <div class="card-corner tl">A<span>&#9830;</span></div>
+      <div class="card-corner br">A<span>&#9830;</span></div>
+      <div class="card-suit-bg">&#9830;</div>
+      <div class="card-header">
+        <p class="card-tag">Partida finalizada</p>
+        <p class="card-title" id="f-card-title"></p>
+        <p class="card-date" id="f-card-date"></p>
+      </div>
+      <div class="winner-block">
+        <p class="winner-tag">&#9830; Ganadora</p>
+        <p class="winner-name" id="f-winner-name"></p>
+        <p class="winner-score" id="f-winner-score"></p>
+      </div>
+      <div class="scores-grid" id="f-scores-grid"></div>
+      <div class="card-footer-note">
+        <p>Anotado con <strong>Canaston</strong> &middot; &#161;Buena paca! &#127183;</p>
+      </div>
+    </div>
+    <div class="foto-note">
+      &#128247; Toma una foto y comparte tu resultado en tus redes sociales
+    </div>
+    <button class="btn-nueva" onclick="nuevaPartida()">Nueva partida</button>
+    <div style="height:1.5rem"></div>
+  </div>
+</div>
+
 <!-- MODAL CIERRE PATA -->
 <div class="modal-overlay" id="modal-pata">
   <div class="modal-sheet">
@@ -461,7 +540,11 @@ const CLAVE = "canaston2024seguro";
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-const PICA_ORDER = [0,2,1,3];
+// Rotacion CONTRARIA a las agujas del reloj: J1(0) → J4(3) → J2(1) → J3(2) → J1(0)...
+// Vista mesa: top=J1, right=J3, bottom=J2, left=J4
+// Contrario al reloj desde arriba: top→left→bottom→right → J1→J4→J2→J3
+const PICA_ORDER = [0,3,1,2];
+
 const ALL_COMBOS = [
   {parejas:[[0,1],[2,3]]},
   {parejas:[[0,2],[1,3]]},
@@ -469,7 +552,6 @@ const ALL_COMBOS = [
 ];
 
 function puntosParaBajada(acum){
-  if(acum<=0)    return 50;
   if(acum<=3000)  return 50;
   if(acum<=5000)  return 90;
   if(acum<=7000)  return 120;
@@ -480,7 +562,7 @@ function puntosParaBajada(acum){
 
 let S = {
   mesaId:null, isOwner:false, pinVerificado:false,
-  players:['','','',''], torneo:'',
+  players:['','','',''], torneo:'', fechaInicio:'',
   timerTotal:70, timerLeft:70, timerRunning:false, timerInterval:null,
   pataNum:1, picaIdx:0, parejas:[[0,1],[2,3]],
   manos:[],
@@ -507,6 +589,10 @@ function calcAcums(manos){
 }
 function picaEnManoN(n){return PICA_ORDER[n%4];}
 function validarEmail(e){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);}
+function fechaHoy(){
+  const d=new Date();
+  return d.toLocaleDateString('es-CO',{day:'numeric',month:'long',year:'numeric'});
+}
 
 // INIT
 document.getElementById('loading').style.display='flex';
@@ -520,72 +606,58 @@ if(mesaParam){
   show('screen-setup');
 }
 
-// REGISTRO EN SHEETS
-async function registrarEnSheets(nombre, correo, telefono, torneo){
+async function registrarEnSheets(nombre,correo,telefono,torneo){
   try{
-    await fetch(SHEETS_URL, {
-      method:'POST',
-      mode:'no-cors',
+    await fetch(SHEETS_URL,{
+      method:'POST',mode:'no-cors',
       headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({clave:CLAVE, nombre, correo, telefono, torneo})
+      body:JSON.stringify({clave:CLAVE,nombre,correo,telefono,torneo})
     });
-  } catch(e){
-    console.log('No se pudo guardar registro:', e);
-  }
+  } catch(e){console.log('Registro sheets:',e);}
 }
 
-// CREAR MESA
-window.crearMesa = async function(){
-  const nombre = document.getElementById('inp-nombre').value.trim();
-  const correo = document.getElementById('inp-correo').value.trim();
-  const tel    = document.getElementById('inp-tel').value.trim();
-  const torneo = document.getElementById('inp-torneo').value.trim();
-  const p1 = document.getElementById('p1').value.trim();
-  const p2 = document.getElementById('p2').value.trim();
-  const p3 = document.getElementById('p3').value.trim();
-  const p4 = document.getElementById('p4').value.trim();
-  const pin = document.getElementById('inp-pin').value.trim();
-  const min = parseInt(document.getElementById('inp-min').value)||1;
-  const sec = parseInt(document.getElementById('inp-sec').value)||10;
-
-  // Validaciones
+window.crearMesa=async function(){
+  const nombre=document.getElementById('inp-nombre').value.trim();
+  const correo=document.getElementById('inp-correo').value.trim();
+  const tel=document.getElementById('inp-tel').value.trim();
+  const torneo=document.getElementById('inp-torneo').value.trim();
+  const p1=document.getElementById('p1').value.trim();
+  const p2=document.getElementById('p2').value.trim();
+  const p3=document.getElementById('p3').value.trim();
+  const p4=document.getElementById('p4').value.trim();
+  const pin=document.getElementById('inp-pin').value.trim();
+  const min=parseInt(document.getElementById('inp-min').value)||1;
+  const sec=parseInt(document.getElementById('inp-sec').value)||10;
   if(!nombre){toast('Ingresa tu nombre');document.getElementById('inp-nombre').focus();return}
   if(!correo||!validarEmail(correo)){toast('Ingresa un correo válido');document.getElementById('inp-correo').focus();return}
   if(!tel||tel.length<7){toast('Ingresa tu teléfono');document.getElementById('inp-tel').focus();return}
   if(!torneo||!p1||!p2||!p3||!p4){toast('Completa todos los campos de la mesa');return}
   if(pin.length!==4||isNaN(pin)){toast('El PIN debe ser 4 dígitos numéricos');return}
-
-  const btn = document.getElementById('btn-comenzar');
-  btn.disabled = true;
-  btn.textContent = 'Creando mesa...';
-
-  const id = genId();
-  S.mesaId=id; S.isOwner=true; S.pinVerificado=true;
-  S.players=[p1,p2,p3,p4]; S.torneo=torneo;
-  S.timerTotal=min*60+sec; S.timerLeft=S.timerTotal;
-  S.pataNum=1; S.picaIdx=0; S.parejas=[[0,1],[2,3]];
-  S.manos=[]; S.totalManosJugadas=0;
+  const btn=document.getElementById('btn-comenzar');
+  btn.disabled=true;btn.textContent='Creando mesa...';
+  const id=genId();
+  S.mesaId=id;S.isOwner=true;S.pinVerificado=true;
+  S.players=[p1,p2,p3,p4];S.torneo=torneo;S.fechaInicio=fechaHoy();
+  S.timerTotal=min*60+sec;S.timerLeft=S.timerTotal;
+  S.pataNum=1;S.picaIdx=0;S.parejas=[[0,1],[2,3]];
+  S.manos=[];S.totalManosJugadas=0;
   S.posScores=[[null,null,null],[null,null,null],[null,null,null],[null,null,null]];
   S.usedCombos=[0];
-
   try{
-    // Guardar en Firebase
     await set(ref(db,`mesas/${id}`),{
       torneo,players:[p1,p2,p3,p4],timerTotal:S.timerTotal,
-      pinHash:hashPin(pin),pataNum:1,picaIdx:0,
+      pinHash:hashPin(pin),pataNum:1,picaIdx:0,fechaInicio:S.fechaInicio,
       parejas:[[0,1],[2,3]],manos:[],
       posScores:[[null,null,null],[null,null,null],[null,null,null],[null,null,null]],
       usedCombos:[0],totalManosJugadas:0,updatedAt:Date.now()
     });
-    // Registrar en Google Sheets (no bloqueante)
-    registrarEnSheets(nombre, correo, tel, torneo);
+    registrarEnSheets(nombre,correo,tel,torneo);
     document.getElementById('share-link').textContent=location.origin+location.pathname+'?mesa='+id;
     show('screen-game');
     renderJuego();
   } catch(e){
     toast('Error al crear la mesa. Verifica tu conexión.');
-    btn.disabled=false;
-    btn.textContent='Comenzar torneo';
+    btn.disabled=false;btn.textContent='Comenzar torneo';
     console.error(e);
   }
 }
@@ -599,7 +671,7 @@ async function guardar(){
       manos:S.manos.map(m=>({...m})),
       posScores:S.posScores.map(p=>[...p]),
       usedCombos:S.usedCombos,totalManosJugadas:S.totalManosJugadas,
-      updatedAt:Date.now()
+      fechaInicio:S.fechaInicio,updatedAt:Date.now()
     });
   } catch(e){console.error(e);}
 }
@@ -642,6 +714,7 @@ window.timerReset=function(){
   document.getElementById('t-play').innerHTML='&#9654;';
 }
 
+// top=J1(0), right=J3(2), bottom=J2(1), left=J4(3)
 function renderMesa(topId,rightId,bottomId,leftId,chipsId){
   const seatMap={[topId]:0,[rightId]:2,[bottomId]:1,[leftId]:3};
   Object.entries(seatMap).forEach(([elId,pi])=>{
@@ -803,6 +876,13 @@ function abrirModalPata(acumA,acumB){
   S.posScores[S.parejas[0][1]][S.pataNum-1]=acumA;
   S.posScores[S.parejas[1][0]][S.pataNum-1]=acumB;
   S.posScores[S.parejas[1][1]][S.pataNum-1]=acumB;
+
+  // Si es la pata 3, ir directo a pantalla final
+  if(S.pataNum===3){
+    guardar().then(()=>mostrarPantallaFinal());
+    return;
+  }
+
   document.getElementById('modal-result').innerHTML=`
     <div class="result-box">
       <p class="r-lbl">Ganadora de pata ${S.pataNum}</p>
@@ -819,6 +899,47 @@ function abrirModalPata(acumA,acumB){
   else{S.newComboIdx=combosDisp[0].idx;S.newParejas=combosDisp[0].parejas.map(p=>[...p]);}
   document.getElementById('modal-pata').classList.add('open');
   modalIr(1);
+}
+
+function mostrarPantallaFinal(){
+  clearInterval(S.timerInterval);
+  // Calcular totales individuales
+  const totales=S.players.map((_,i)=>S.posScores[i].reduce((a,b)=>a+(b!==null?b:0),0));
+  const ganadoraIdx=totales.indexOf(Math.max(...totales));
+  // Render tarjeta
+  document.getElementById('f-title').textContent=S.torneo;
+  document.getElementById('f-card-title').textContent=S.torneo;
+  document.getElementById('f-card-date').textContent=S.fechaInicio||fechaHoy();
+  document.getElementById('f-winner-name').textContent=S.players[ganadoraIdx];
+  document.getElementById('f-winner-score').textContent=fmt(totales[ganadoraIdx])+' puntos totales';
+  // Scores grid — ordenar por total descendente
+  const ordenadas=[...S.players.map((name,i)=>({name,total:totales[i],scores:S.posScores[i]}))].sort((a,b)=>b.total-a.total);
+  document.getElementById('f-scores-grid').innerHTML=ordenadas.map((p,rank)=>`
+    <div class="sc-card">
+      <p class="sc-name">${p.name}</p>
+      <p class="sc-val ${rank===0?'sc-val-top':''}">${fmt(p.total)}</p>
+      <p class="sc-patas">${p.scores.map(s=>s!==null?fmt(s):'—').join(' · ')}</p>
+    </div>`).join('');
+  show('screen-final');
+}
+
+window.nuevaPartida=function(){
+  clearInterval(S.timerInterval);
+  S={...S,mesaId:null,isOwner:false,pinVerificado:false,
+    players:['','','',''],torneo:'',fechaInicio:'',
+    timerLeft:70,timerRunning:false,timerInterval:null,
+    pataNum:1,picaIdx:0,parejas:[[0,1],[2,3]],
+    manos:[],posScores:[[null,null,null],[null,null,null],[null,null,null],[null,null,null]],
+    usedCombos:[0],totalManosJugadas:0};
+  // Limpiar form
+  ['inp-nombre','inp-correo','inp-tel','inp-torneo','p1','p2','p3','p4','inp-pin'].forEach(id=>{
+    const el=document.getElementById(id);if(el)el.value='';
+  });
+  document.getElementById('inp-min').value='1';
+  document.getElementById('inp-sec').value='10';
+  const btn=document.getElementById('btn-comenzar');
+  if(btn){btn.disabled=false;btn.textContent='Comenzar torneo';}
+  show('screen-setup');
 }
 
 window.modalIr=function(n){
