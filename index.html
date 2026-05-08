@@ -18,8 +18,6 @@ html,body{background:var(--cream);font-family:'DM Sans',sans-serif;color:var(--b
 .serif{font-family:'Playfair Display',serif}
 .screen{display:none;max-width:480px;margin:0 auto}
 .screen.active{display:block}
-
-/* SETUP */
 .setup-header{background:var(--wine);padding:2rem 1.5rem 1.5rem;text-align:center;color:#f3f3f3}
 .setup-header h1{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;letter-spacing:0.5px}
 .setup-header p{font-size:12px;opacity:0.7;margin-top:4px;text-transform:uppercase;letter-spacing:2px}
@@ -45,8 +43,6 @@ html,body{background:var(--cream);font-family:'DM Sans',sans-serif;color:var(--b
 .btn-primary:disabled{opacity:0.5;cursor:not-allowed}
 .divider{height:1px;background:var(--gray-light);margin:1.25rem 0}
 .sec-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:500;color:var(--black);margin-bottom:0.75rem;padding-bottom:0.5rem;border-bottom:1px solid var(--gray-light)}
-
-/* GAME HEADER */
 .game-header{background:var(--wine);color:#f3f3f3;padding:1rem 1.25rem 0}
 .gh-title{font-family:'Playfair Display',serif;font-size:20px;text-align:center;letter-spacing:0.3px}
 .gh-pata{font-size:11px;text-transform:uppercase;letter-spacing:2px;opacity:0.7;text-align:center;margin-top:2px}
@@ -56,11 +52,7 @@ html,body{background:var(--cream);font-family:'DM Sans',sans-serif;color:var(--b
 .t-btn:active{background:rgba(255,255,255,0.25)}
 .t-bar{height:3px;background:rgba(255,255,255,0.2);overflow:hidden}
 .t-bar-fill{height:100%;background:#f3f3f3;transition:width 1s linear}
-
-/* GAME BODY */
 .game-body{padding:1rem 1.25rem;max-width:480px;margin:0 auto}
-
-/* MESA */
 .mesa-grid{display:grid;grid-template-columns:1fr 76px 1fr;grid-template-rows:auto 76px auto;gap:8px;align-items:center;justify-items:center;margin-bottom:0.875rem}
 .mesa-center{width:72px;height:72px;border:1.5px solid var(--black);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--wine)}
 .seat{text-align:center}
@@ -76,8 +68,6 @@ html,body{background:var(--cream);font-family:'DM Sans',sans-serif;color:var(--b
 .chip-names{font-size:13px;font-weight:500;margin-top:2px}
 .chip-names-r{color:var(--wine)}
 .chip-names-b{color:var(--black)}
-
-/* TABLA BAJADA */
 details summary{font-family:'Playfair Display',serif;font-size:15px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding-bottom:0.5rem;border-bottom:1px solid var(--gray-light)}
 details summary::-webkit-details-marker{display:none}
 .ref-tbl{width:100%;border-collapse:collapse;font-size:13px;margin-top:0.5rem}
@@ -85,8 +75,6 @@ details summary::-webkit-details-marker{display:none}
 .ref-tbl td{padding:6px 10px;border-bottom:0.5px solid var(--gray-light)}
 .ref-tbl tr:nth-child(even) td{background:rgba(0,0,0,0.015)}
 .pts-badge{background:var(--wine);color:#f3f3f3;border-radius:4px;padding:1px 7px;font-size:12px;font-weight:500}
-
-/* BAJADA SUGERIDA */
 .bajada-sugerida{border-radius:8px;border:1px solid var(--gray-border);overflow:hidden;margin-bottom:0.75rem}
 .bajada-row{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-bottom:0.5px solid var(--gray-light)}
 .bajada-row:last-child{border-bottom:none}
@@ -98,8 +86,6 @@ details summary::-webkit-details-marker{display:none}
 .bajada-acum{font-size:11px;color:var(--gray);margin-top:1px}
 .bajada-pts{background:var(--wine);color:#f3f3f3;border-radius:5px;padding:3px 10px;font-size:13px;font-weight:500;white-space:nowrap}
 .bajada-pts-b{background:var(--black)}
-
-/* TABLA PUNTAJES */
 .pata-wrap{overflow-x:auto;margin-bottom:0.75rem;border-radius:8px;border:1px solid var(--gray-light)}
 .pata-tbl{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed}
 .pata-tbl th{padding:7px 3px;text-align:center;font-size:10px;text-transform:uppercase;letter-spacing:0.5px;border-bottom:1.5px solid var(--gray-border);background:#fafafa}
@@ -123,8 +109,6 @@ details summary::-webkit-details-marker{display:none}
 .btn-mano:active{background:var(--wine-light)}
 .btn-cerrar{width:100%;background:var(--wine);color:#f3f3f3;border:none;border-radius:8px;padding:11px;font-size:14px;cursor:pointer;font-family:'Playfair Display',serif;opacity:0.35;transition:opacity 0.2s}
 .btn-cerrar.ready{opacity:1}
-
-/* POSICIONAMIENTO */
 .pos-tbl{width:100%;border-collapse:collapse;font-size:12px}
 .pos-tbl th{padding:7px 5px;text-align:center;font-size:10px;text-transform:uppercase;letter-spacing:0.5px;color:var(--gray);border-bottom:1px solid var(--gray-light)}
 .pos-tbl th:first-child{text-align:left}
@@ -132,8 +116,6 @@ details summary::-webkit-details-marker{display:none}
 .pos-tbl td:first-child{text-align:left;font-weight:500}
 .pos-hl{color:var(--wine);font-weight:500}
 .pos-badge{display:inline-block;background:var(--wine);color:#f3f3f3;font-size:9px;border-radius:3px;padding:1px 4px;margin-left:3px;vertical-align:middle}
-
-/* MODAL PATA */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:200;align-items:flex-end;justify-content:center}
 .modal-overlay.open{display:flex}
 .modal-sheet{background:var(--white);border-radius:18px 18px 0 0;padding:1.5rem 1.25rem 2rem;width:100%;max-width:480px;max-height:92vh;overflow-y:auto}
@@ -170,8 +152,6 @@ details summary::-webkit-details-marker{display:none}
 .swap-btn{background:none;border:1px solid var(--gray-border);border-radius:6px;padding:5px 14px;cursor:pointer;font-size:12px;color:var(--gray);font-family:'DM Sans',sans-serif}
 .btn-confirm{width:100%;background:var(--wine);color:#f3f3f3;border:none;border-radius:10px;padding:14px;font-size:15px;font-family:'Playfair Display',serif;cursor:pointer;margin-top:0.5rem;transition:opacity 0.2s}
 .btn-confirm:active{opacity:0.85}
-
-/* PIN MODAL */
 .pin-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:300;align-items:center;justify-content:center;padding:1.5rem}
 .pin-modal-overlay.open{display:flex}
 .pin-box{background:var(--white);border-radius:16px;padding:1.5rem;width:100%;max-width:320px;text-align:center}
@@ -183,8 +163,6 @@ details summary::-webkit-details-marker{display:none}
 .pin-btns{display:flex;gap:8px;margin-top:1rem}
 .btn-cancel{flex:1;background:none;border:1px solid var(--gray-border);border-radius:8px;padding:11px;font-size:14px;cursor:pointer;font-family:'DM Sans',sans-serif;color:var(--gray)}
 .btn-ok{flex:1;background:var(--wine);color:#f3f3f3;border:none;border-radius:8px;padding:11px;font-size:14px;cursor:pointer;font-family:'DM Sans',sans-serif}
-
-/* ESPECTADORA */
 .live-bar{display:flex;align-items:center;justify-content:center;gap:6px;padding:4px 0 8px}
 .live-dot{width:7px;height:7px;border-radius:50%;background:#7fff7f;animation:pulse 1.5s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
@@ -200,8 +178,6 @@ details summary::-webkit-details-marker{display:none}
 .sb-mano{font-size:10px;color:var(--gray);margin-top:2px}
 .updated-txt{font-size:10px;color:var(--gray);text-align:center;margin-top:0.5rem}
 .pata-badge{display:inline-block;background:var(--black);color:#f3f3f3;font-size:10px;text-transform:uppercase;letter-spacing:1px;border-radius:4px;padding:2px 8px;margin-bottom:0.75rem}
-
-/* PANTALLA FINAL */
 .final-body{padding:1.5rem 1.25rem;max-width:480px;margin:0 auto}
 .share-card{background:var(--cream);border:2px solid var(--wine);border-radius:12px;padding:1.5rem;position:relative;overflow:hidden;margin-bottom:1rem}
 .card-corner{position:absolute;font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--wine);line-height:1}
@@ -229,12 +205,8 @@ details summary::-webkit-details-marker{display:none}
 .foto-note{background:var(--wine-light);border:1px solid var(--wine-mid);border-radius:8px;padding:0.75rem 1rem;text-align:center;margin-bottom:0.75rem;font-size:13px;color:var(--wine);line-height:1.5}
 .btn-nueva{width:100%;background:var(--wine);color:#f3f3f3;border:none;border-radius:10px;padding:14px;font-size:16px;font-family:'Playfair Display',serif;cursor:pointer;letter-spacing:0.3px;transition:opacity 0.2s}
 .btn-nueva:active{opacity:0.85}
-
-/* TOAST */
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--black);color:#f3f3f3;border-radius:8px;padding:10px 20px;font-size:13px;z-index:999;transition:transform 0.3s;pointer-events:none;white-space:nowrap}
 .toast.show{transform:translateX(-50%) translateY(0)}
-
-/* LOADING / ERROR */
 .loading-screen{display:flex;align-items:center;justify-content:center;min-height:100vh;flex-direction:column;gap:12px}
 .loading-screen p{color:var(--gray);font-size:14px}
 .spinner{width:32px;height:32px;border:2px solid var(--gray-light);border-top-color:var(--wine);border-radius:50%;animation:spin 0.8s linear infinite}
@@ -250,7 +222,6 @@ details summary::-webkit-details-marker{display:none}
   <div class="spinner"></div>
   <p>Cargando...</p>
 </div>
-
 <div class="error-screen" id="error-screen" style="display:none">
   <h2>Error de conexión</h2>
   <p>No se pudo conectar.<br>Verifica tu conexión e intenta de nuevo.</p>
@@ -259,10 +230,7 @@ details summary::-webkit-details-marker{display:none}
 
 <!-- SETUP -->
 <div class="screen" id="screen-setup">
-  <div class="setup-header">
-    <h1>Canaston</h1>
-    <p>Nueva mesa</p>
-  </div>
+  <div class="setup-header"><h1>Canaston</h1><p>Nueva mesa</p></div>
   <div class="setup-body">
     <p class="section-tag serif">Tus datos</p>
     <div class="field-group">
@@ -379,10 +347,7 @@ details summary::-webkit-details-marker{display:none}
     <p class="sec-title serif">Posicionamiento individual</p>
     <table class="pos-tbl">
       <thead>
-        <tr>
-          <th style="text-align:left">Jugadora</th>
-          <th>Pata 1</th><th>Pata 2</th><th>Pata 3</th><th>Total</th>
-        </tr>
+        <tr><th style="text-align:left">Jugadora</th><th>Pata 1</th><th>Pata 2</th><th>Pata 3</th><th>Total</th></tr>
       </thead>
       <tbody id="pos-body"></tbody>
     </table>
@@ -428,10 +393,7 @@ details summary::-webkit-details-marker{display:none}
     <p class="sec-title serif">Posicionamiento individual</p>
     <table class="pos-tbl">
       <thead>
-        <tr>
-          <th style="text-align:left">Jugadora</th>
-          <th>Pata 1</th><th>Pata 2</th><th>Pata 3</th><th>Total</th>
-        </tr>
+        <tr><th style="text-align:left">Jugadora</th><th>Pata 1</th><th>Pata 2</th><th>Pata 3</th><th>Total</th></tr>
       </thead>
       <tbody id="v-pos-body"></tbody>
     </table>
@@ -448,7 +410,7 @@ details summary::-webkit-details-marker{display:none}
   </div>
   <div style="height:3px;background:var(--wine)"></div>
   <div class="final-body">
-    <div class="share-card" id="share-card">
+    <div class="share-card">
       <div class="card-corner tl">A<span>&#9830;</span></div>
       <div class="card-corner br">A<span>&#9830;</span></div>
       <div class="card-suit-bg">&#9830;</div>
@@ -467,9 +429,7 @@ details summary::-webkit-details-marker{display:none}
         <p>Anotado con <strong>Canaston</strong> &middot; &#161;Buena paca! &#127183;</p>
       </div>
     </div>
-    <div class="foto-note">
-      &#128247; Toma una foto y comparte tu resultado en tus redes sociales
-    </div>
+    <div class="foto-note">&#128247; Toma una foto y comparte tu resultado en tus redes sociales</div>
     <button class="btn-nueva" onclick="nuevaPartida()">Nueva partida</button>
     <div style="height:1.5rem"></div>
   </div>
@@ -479,9 +439,7 @@ details summary::-webkit-details-marker{display:none}
 <div class="modal-overlay" id="modal-pata">
   <div class="modal-sheet">
     <div class="modal-steps">
-      <div class="m-dot" id="md1"></div>
-      <div class="m-dot" id="md2"></div>
-      <div class="m-dot" id="md3"></div>
+      <div class="m-dot" id="md1"></div><div class="m-dot" id="md2"></div><div class="m-dot" id="md3"></div>
     </div>
     <div class="m-step" id="ms1">
       <p class="modal-title serif">Pata cerrada</p>
@@ -534,15 +492,13 @@ const firebaseConfig = {
   databaseURL: "https://canaston-b4cbe-default-rtdb.firebaseio.com"
 };
 
-const SHEETS_URL = "https://script.google.com/macros/s/AKfycbwi7S1ZwVXeXtrKV1UOceWJoCKRkU9DBZN2WTGEpilv-2egRND2HlGlsd4wz7nQfyRTlQ/exec"; = "https://script.google.com/macros/s/AKfycbwi7S1ZwVXeXtrKV1UOceWJoCKRkU9DBZN2WTGEpilv-2egRND2HlGlsd4wz7nQfyRTlQ/exec";
+const SHEETS_URL = "https://script.google.com/macros/s/AKfycbwC4G3gGTi0NQL3ao7u7hRmRRdOVWlGm5L8tY4t0aCXJ4rfHArcZr3YQtut4GesGC_0UQ/exec";
 const CLAVE = "Cn8$mP2xQw7vLr4Tz9kJ3nYs6bFhDq1X";
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-// Rotacion CONTRARIA a las agujas del reloj: J1(0) → J4(3) → J2(1) → J3(2) → J1(0)...
-// Vista mesa: top=J1, right=J3, bottom=J2, left=J4
-// Contrario al reloj desde arriba: top→left→bottom→right → J1→J4→J2→J3
+// Rotacion CONTRARIA a las agujas del reloj: J1(0)→J4(3)→J2(1)→J3(2)→J1(0)
 const PICA_ORDER = [0,3,1,2];
 
 const ALL_COMBOS = [
@@ -561,14 +517,14 @@ function puntosParaBajada(acum){
 }
 
 let S = {
-  mesaId:null, isOwner:false, pinVerificado:false,
-  players:['','','',''], torneo:'', fechaInicio:'',
-  timerTotal:70, timerLeft:70, timerRunning:false, timerInterval:null,
-  pataNum:1, picaIdx:0, parejas:[[0,1],[2,3]],
+  mesaId:null,isOwner:false,pinVerificado:false,
+  players:['','','',''],torneo:'',fechaInicio:'',
+  timerTotal:70,timerLeft:70,timerRunning:false,timerInterval:null,
+  pataNum:1,picaIdx:0,parejas:[[0,1],[2,3]],
   manos:[],
   posScores:[[null,null,null],[null,null,null],[null,null,null],[null,null,null]],
-  usedCombos:[0], totalManosJugadas:0,
-  newPicaIdx:0, newParejas:[[0,1],[2,3]], newComboIdx:0
+  usedCombos:[0],totalManosJugadas:0,
+  newPicaIdx:0,newParejas:[[0,1],[2,3]],newComboIdx:0
 };
 
 function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active')}
@@ -594,12 +550,12 @@ function fechaHoy(){
   return d.toLocaleDateString('es-CO',{day:'numeric',month:'long',year:'numeric'});
 }
 
-// INIT
-document.getElementById('loading').style.display='flex';
+// INIT — carga inmediata sin esperar Firebase para el setup
 const params=new URLSearchParams(location.search);
 const mesaParam=params.get('mesa');
 if(mesaParam){
   S.mesaId=mesaParam;
+  document.getElementById('loading').style.display='flex';
   iniciarVistaEspectadora();
 } else {
   document.getElementById('loading').style.display='none';
@@ -608,12 +564,12 @@ if(mesaParam){
 
 async function registrarEnSheets(nombre,correo,telefono,torneo){
   try{
-    await fetch(const SHEETS_URL = "https://script.google.com/macros/s/AKfycbwi7S1ZwVXeXtrKV1UOceWJoCKRkU9DBZN2WTGEpilv-2egRND2HlGlsd4wz7nQfyRTlQ/exec";,{
+    await fetch(SHEETS_URL,{
       method:'POST',mode:'no-cors',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({clave:CLAVE,nombre,correo,telefono,torneo})
     });
-  } catch(e){console.log('Registro sheets:',e);}
+  } catch(e){console.log('Sheets:',e);}
 }
 
 window.crearMesa=async function(){
@@ -714,7 +670,6 @@ window.timerReset=function(){
   document.getElementById('t-play').innerHTML='&#9654;';
 }
 
-// top=J1(0), right=J3(2), bottom=J2(1), left=J4(3)
 function renderMesa(topId,rightId,bottomId,leftId,chipsId){
   const seatMap={[topId]:0,[rightId]:2,[bottomId]:1,[leftId]:3};
   Object.entries(seatMap).forEach(([elId,pi])=>{
@@ -741,17 +696,11 @@ function renderBajada(){
   document.getElementById('bajada-container').innerHTML=`
     <div class="bajada-sugerida">
       <div class="bajada-row bajada-row-r">
-        <div>
-          <div class="bajada-names bajada-names-r">&#9830; ${pa}</div>
-          <div class="bajada-acum">Acumulado: ${fmt(acumA)}</div>
-        </div>
+        <div><div class="bajada-names bajada-names-r">&#9830; ${pa}</div><div class="bajada-acum">Acumulado: ${fmt(acumA)}</div></div>
         <span class="bajada-pts">Sale con ${puntosParaBajada(acumA)} pts</span>
       </div>
       <div class="bajada-row bajada-row-b">
-        <div>
-          <div class="bajada-names bajada-names-b">&#9824; ${pb}</div>
-          <div class="bajada-acum">Acumulado: ${fmt(acumB)}</div>
-        </div>
+        <div><div class="bajada-names bajada-names-b">&#9824; ${pb}</div><div class="bajada-acum">Acumulado: ${fmt(acumB)}</div></div>
         <span class="bajada-pts bajada-pts-b">Sale con ${puntosParaBajada(acumB)} pts</span>
       </div>
     </div>`;
@@ -773,22 +722,10 @@ function renderPataTable(){
     </tr>
     <tr>
       <td class="row-lbl">Mano ${i+1}</td>
-      <td><div class="num-cell">
-        <button class="neg-toggle ${m.negA?'active':''}" onclick="toggleNeg(${i},'negA')">−</button>
-        <input class="num-input ${m.negA?'is-neg':''}" type="number" min="0" value="${Math.abs(Number(m.baseA)||0)}" onchange="updateMano(${i},'baseA',this.value)" inputmode="numeric">
-      </div></td>
-      <td><div class="num-cell">
-        <button class="neg-toggle ${m.negContA?'active':''}" onclick="toggleNeg(${i},'negContA')">−</button>
-        <input class="num-input ${m.negContA?'is-neg':''}" type="number" min="0" value="${Math.abs(Number(m.contA)||0)}" onchange="updateMano(${i},'contA',this.value)" inputmode="numeric">
-      </div></td>
-      <td><div class="num-cell">
-        <button class="neg-toggle ${m.negB?'active':''}" onclick="toggleNeg(${i},'negB')">−</button>
-        <input class="num-input ${m.negB?'is-neg':''}" type="number" min="0" value="${Math.abs(Number(m.baseB)||0)}" onchange="updateMano(${i},'baseB',this.value)" inputmode="numeric">
-      </div></td>
-      <td><div class="num-cell">
-        <button class="neg-toggle ${m.negContB?'active':''}" onclick="toggleNeg(${i},'negContB')">−</button>
-        <input class="num-input ${m.negContB?'is-neg':''}" type="number" min="0" value="${Math.abs(Number(m.contB)||0)}" onchange="updateMano(${i},'contB',this.value)" inputmode="numeric">
-      </div></td>
+      <td><div class="num-cell"><button class="neg-toggle ${m.negA?'active':''}" onclick="toggleNeg(${i},'negA')">−</button><input class="num-input ${m.negA?'is-neg':''}" type="number" min="0" value="${Math.abs(Number(m.baseA)||0)}" onchange="updateMano(${i},'baseA',this.value)" inputmode="numeric"></div></td>
+      <td><div class="num-cell"><button class="neg-toggle ${m.negContA?'active':''}" onclick="toggleNeg(${i},'negContA')">−</button><input class="num-input ${m.negContA?'is-neg':''}" type="number" min="0" value="${Math.abs(Number(m.contA)||0)}" onchange="updateMano(${i},'contA',this.value)" inputmode="numeric"></div></td>
+      <td><div class="num-cell"><button class="neg-toggle ${m.negB?'active':''}" onclick="toggleNeg(${i},'negB')">−</button><input class="num-input ${m.negB?'is-neg':''}" type="number" min="0" value="${Math.abs(Number(m.baseB)||0)}" onchange="updateMano(${i},'baseB',this.value)" inputmode="numeric"></div></td>
+      <td><div class="num-cell"><button class="neg-toggle ${m.negContB?'active':''}" onclick="toggleNeg(${i},'negContB')">−</button><input class="num-input ${m.negContB?'is-neg':''}" type="number" min="0" value="${Math.abs(Number(m.contB)||0)}" onchange="updateMano(${i},'contB',this.value)" inputmode="numeric"></div></td>
     </tr>
     <tr class="row-sub">
       <td class="row-lbl">Total</td>
@@ -811,18 +748,8 @@ function renderPataTable(){
     <div class="pata-wrap">
     <table class="pata-tbl">
       <thead>
-        <tr>
-          <th style="width:44px"></th>
-          <th colspan="2" class="th-r">&#9830; ${pa}</th>
-          <th colspan="2" class="th-b">&#9824; ${pb}</th>
-        </tr>
-        <tr>
-          <th></th>
-          <th class="th-r" style="font-size:9px">Base</th>
-          <th class="th-r" style="font-size:9px">Cont.</th>
-          <th class="th-b" style="font-size:9px">Base</th>
-          <th class="th-b" style="font-size:9px">Cont.</th>
-        </tr>
+        <tr><th style="width:44px"></th><th colspan="2" class="th-r">&#9830; ${pa}</th><th colspan="2" class="th-b">&#9824; ${pb}</th></tr>
+        <tr><th></th><th class="th-r" style="font-size:9px">Base</th><th class="th-r" style="font-size:9px">Cont.</th><th class="th-b" style="font-size:9px">Base</th><th class="th-b" style="font-size:9px">Cont.</th></tr>
       </thead>
       <tbody>${rows}</tbody>
     </table>
@@ -876,13 +803,7 @@ function abrirModalPata(acumA,acumB){
   S.posScores[S.parejas[0][1]][S.pataNum-1]=acumA;
   S.posScores[S.parejas[1][0]][S.pataNum-1]=acumB;
   S.posScores[S.parejas[1][1]][S.pataNum-1]=acumB;
-
-  // Si es la pata 3, ir directo a pantalla final
-  if(S.pataNum===3){
-    guardar().then(()=>mostrarPantallaFinal());
-    return;
-  }
-
+  if(S.pataNum===3){guardar().then(()=>mostrarPantallaFinal());return;}
   document.getElementById('modal-result').innerHTML=`
     <div class="result-box">
       <p class="r-lbl">Ganadora de pata ${S.pataNum}</p>
@@ -903,16 +824,13 @@ function abrirModalPata(acumA,acumB){
 
 function mostrarPantallaFinal(){
   clearInterval(S.timerInterval);
-  // Calcular totales individuales
   const totales=S.players.map((_,i)=>S.posScores[i].reduce((a,b)=>a+(b!==null?b:0),0));
   const ganadoraIdx=totales.indexOf(Math.max(...totales));
-  // Render tarjeta
   document.getElementById('f-title').textContent=S.torneo;
   document.getElementById('f-card-title').textContent=S.torneo;
   document.getElementById('f-card-date').textContent=S.fechaInicio||fechaHoy();
   document.getElementById('f-winner-name').textContent=S.players[ganadoraIdx];
   document.getElementById('f-winner-score').textContent=fmt(totales[ganadoraIdx])+' puntos totales';
-  // Scores grid — ordenar por total descendente
   const ordenadas=[...S.players.map((name,i)=>({name,total:totales[i],scores:S.posScores[i]}))].sort((a,b)=>b.total-a.total);
   document.getElementById('f-scores-grid').innerHTML=ordenadas.map((p,rank)=>`
     <div class="sc-card">
@@ -931,10 +849,7 @@ window.nuevaPartida=function(){
     pataNum:1,picaIdx:0,parejas:[[0,1],[2,3]],
     manos:[],posScores:[[null,null,null],[null,null,null],[null,null,null],[null,null,null]],
     usedCombos:[0],totalManosJugadas:0};
-  // Limpiar form
-  ['inp-nombre','inp-correo','inp-tel','inp-torneo','p1','p2','p3','p4','inp-pin'].forEach(id=>{
-    const el=document.getElementById(id);if(el)el.value='';
-  });
+  ['inp-nombre','inp-correo','inp-tel','inp-torneo','p1','p2','p3','p4','inp-pin'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
   document.getElementById('inp-min').value='1';
   document.getElementById('inp-sec').value='10';
   const btn=document.getElementById('btn-comenzar');
@@ -952,8 +867,7 @@ window.modalIr=function(n){
 }
 
 function renderPickStep(){
-  document.getElementById('sug-pica').innerHTML=
-    '<strong>Sugerencia:</strong> Le toca picar a <strong>'+S.players[S.newPicaIdx]+'</strong> según la rotación continua';
+  document.getElementById('sug-pica').innerHTML='<strong>Sugerencia:</strong> Le toca picar a <strong>'+S.players[S.newPicaIdx]+'</strong> según la rotación continua';
   document.getElementById('pica-grid').innerHTML=S.players.map((name,i)=>
     `<div class="pica-opt ${i===S.newPicaIdx?'sel':''}" onclick="selPica(${i})">${name}</div>`
   ).join('');
@@ -968,18 +882,11 @@ function renderParejaStep(){
   const pa=S.newParejas[0].map(i=>S.players[i]).join(' & ');
   const pb=S.newParejas[1].map(i=>S.players[i]).join(' & ');
   const alt=ALL_COMBOS.map((c,i)=>i).filter(i=>i!==S.newComboIdx&&!S.usedCombos.includes(i));
-  document.getElementById('sug-parejas').innerHTML=
-    '<strong>Sugerencia:</strong> '+pa+' vs '+pb+' — ninguna pareja se repite';
+  document.getElementById('sug-parejas').innerHTML='<strong>Sugerencia:</strong> '+pa+' vs '+pb+' — ninguna pareja se repite';
   document.getElementById('parejas-edit').innerHTML=`
-    <div class="pe-row pe-r">
-      <span class="pe-suit pe-suit-r">&#9830;</span>
-      <span class="pe-names pe-names-r">${pa}</span>
-    </div>
+    <div class="pe-row pe-r"><span class="pe-suit pe-suit-r">&#9830;</span><span class="pe-names pe-names-r">${pa}</span></div>
     ${alt.length?'<div class="swap-center"><button class="swap-btn" onclick="swapParejas()">&#8645; Cambiar parejas</button></div>':''}
-    <div class="pe-row pe-b">
-      <span class="pe-suit">&#9824;</span>
-      <span class="pe-names pe-names-b">${pb}</span>
-    </div>`;
+    <div class="pe-row pe-b"><span class="pe-suit">&#9824;</span><span class="pe-names pe-names-b">${pb}</span></div>`;
   document.getElementById('next-pata-n').textContent=S.pataNum+1;
   document.getElementById('btn-comenzar-pata').onclick=iniciarSiguientePata;
 }
@@ -1058,16 +965,8 @@ function renderVistaEspectadora(updatedAt){
   const pa=S.parejas[0].map(i=>S.players[i]).join(' & ');
   const pb=S.parejas[1].map(i=>S.players[i]).join(' & ');
   document.getElementById('v-score-big').innerHTML=`
-    <div class="sb-card sb-r">
-      <p class="sb-lbl">&#9830; ${pa}</p>
-      <p class="sb-val sb-val-r">${fmt(last.acumA)}</p>
-      <p class="sb-mano">${S.manos.length?'Mano '+S.manos.length:'Sin manos'}</p>
-    </div>
-    <div class="sb-card sb-b">
-      <p class="sb-lbl">&#9824; ${pb}</p>
-      <p class="sb-val">${fmt(last.acumB)}</p>
-      <p class="sb-mano">${S.manos.length?'Mano '+S.manos.length:'Sin manos'}</p>
-    </div>`;
+    <div class="sb-card sb-r"><p class="sb-lbl">&#9830; ${pa}</p><p class="sb-val sb-val-r">${fmt(last.acumA)}</p><p class="sb-mano">${S.manos.length?'Mano '+S.manos.length:'Sin manos'}</p></div>
+    <div class="sb-card sb-b"><p class="sb-lbl">&#9824; ${pb}</p><p class="sb-val">${fmt(last.acumB)}</p><p class="sb-mano">${S.manos.length?'Mano '+S.manos.length:'Sin manos'}</p></div>`;
   document.getElementById('v-hist-title').textContent='Historial pata '+S.pataNum;
   let hRows='';
   S.manos.forEach((m,i)=>{
@@ -1075,26 +974,14 @@ function renderVistaEspectadora(updatedAt){
     const manoGlobal=S.totalManosJugadas-S.manos.length+i;
     const picaNombreMano=S.players[picaEnManoN(manoGlobal)];
     hRows+=`
-    <tr style="background:#fff8f8">
-      <td colspan="5" class="row-lbl" style="font-size:10px;color:var(--wine);padding:3px 6px">&#9830; Pica: ${picaNombreMano}</td>
-    </tr>
+    <tr style="background:#fff8f8"><td colspan="5" class="row-lbl" style="font-size:10px;color:var(--wine);padding:3px 6px">&#9830; Pica: ${picaNombreMano}</td></tr>
     <tr>
       <td class="row-lbl">Mano ${i+1}</td>
-      <td class="${a.bA<0?'neg-val':''}">${fmt(a.bA)}</td>
-      <td class="${a.cA<0?'neg-val':''}">${fmt(a.cA)}</td>
-      <td class="${a.bB<0?'neg-val':''}">${fmt(a.bB)}</td>
-      <td class="${a.cB<0?'neg-val':''}">${fmt(a.cB)}</td>
+      <td class="${a.bA<0?'neg-val':''}">${fmt(a.bA)}</td><td class="${a.cA<0?'neg-val':''}">${fmt(a.cA)}</td>
+      <td class="${a.bB<0?'neg-val':''}">${fmt(a.bB)}</td><td class="${a.cB<0?'neg-val':''}">${fmt(a.cB)}</td>
     </tr>
-    <tr class="row-sub">
-      <td class="row-lbl" style="font-size:10px">Total</td>
-      <td colspan="2" class="${a.totA<0?'neg-val':''}" style="font-weight:500">${fmt(a.totA)}</td>
-      <td colspan="2" class="${a.totB<0?'neg-val':''}" style="font-weight:500">${fmt(a.totB)}</td>
-    </tr>
-    <tr class="row-acum">
-      <td class="row-lbl">Acum.</td>
-      <td colspan="2" class="acum-r">${fmt(a.acumA)}</td>
-      <td colspan="2">${fmt(a.acumB)}</td>
-    </tr>`;
+    <tr class="row-sub"><td class="row-lbl" style="font-size:10px">Total</td><td colspan="2" class="${a.totA<0?'neg-val':''}" style="font-weight:500">${fmt(a.totA)}</td><td colspan="2" class="${a.totB<0?'neg-val':''}" style="font-weight:500">${fmt(a.totB)}</td></tr>
+    <tr class="row-acum"><td class="row-lbl">Acum.</td><td colspan="2" class="acum-r">${fmt(a.acumA)}</td><td colspan="2">${fmt(a.acumB)}</td></tr>`;
   });
   document.getElementById('v-hist-table').innerHTML=`
     <table class="pata-tbl">
